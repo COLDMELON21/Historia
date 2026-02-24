@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legado Histórico: Augusto C. Sandino</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            light: '#f8fafc',
+                            accent: '#d97706', // Ámbar oscuro/dorado
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Animaciones personalizadas modernas */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #fbbf24, #d97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Patrón de fondo sutil para dar textura de "documento" moderno */
+        .bg-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-slate-300 font-sans antialiased bg-pattern selection:bg-brand-accent selection:text-white">
+
+    <!-- Navbar flotante -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 glass-card" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <i class="ph ph-scroll text-brand-accent text-2xl"></i>
+                    <span class="font-serif font-bold text-xl text-white tracking-wider">Archivo Histórico</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#biografia" class="text-sm font-medium hover:text-brand-accent transition">Biografía</a>
+                    <a href="#citas" class="text-sm font-medium hover:text-brand-accent transition">Pensamiento</a>
+                    <a href="#multimedia" class="text-sm font-medium hover:text-brand-accent transition">Archivo Visual</a>
+                    <a href="#acciones" class="text-sm font-medium hover:text-brand-accent transition">Acciones</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <header class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <!-- Decoración de fondo -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-accent/20 rounded-full blur-3xl mix-blend-screen"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-900/30 rounded-full blur-3xl mix-blend-screen"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto reveal active">
+            <p class="text-brand-accent font-semibold tracking-widest uppercase mb-4 text-sm flex items-center justify-center gap-2">
+                <i class="ph ph-star-four"></i> Figura Histórica de Nicaragua <i class="ph ph-star-four"></i>
+            </p>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight">
+                Augusto C. <span class="gradient-text">Sandino</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                El General de Hombres Libres. Conoce los detalles más relevantes de su vida, su legado y los momentos que forjaron su pensamiento antiimperialista.
+            </p>
+            <a href="#biografia" class="inline-flex items-center gap-2 bg-brand-accent hover:bg-amber-500 text-white px-8 py-3 rounded-full font-medium transition-all transform hover:scale-105 hover:shadow-[0_0_20px_rgba(217,119,6,0.4)]">
+                Explorar Historia <i class="ph ph-arrow-down"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Sección: Información Personal (Biografía) -->
+    <section id="biografia" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Datos Biográficos</h2>
+                <div class="w-24 h-1 bg-brand-accent mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tarjeta Nacimiento -->
+                <div class="glass-card rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300 reveal group">
+                    <div class="w-14 h-14 bg-brand-accent/20 rounded-xl flex items-center justify-center text-brand-accent mb-6 group-hover:scale-110 transition-transform">
+                        <i class="ph ph-baby text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 font-serif">Nacimiento</h3>
+                    <p class="text-amber-400 font-medium mb-2">18 de mayo de 1895</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Nació en la ciudad de Niquinohomo, departamento de Masaya, Nicaragua. Hijo de Margarita Calderón, una trabajadora agrícola, y Gregorio Sandino, un mediano propietario agrícola.
+                    </p>
+                </div>
+
+                <!-- Tarjeta Niñez (Datos interesantes) -->
+                <div class="glass-card rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300 reveal group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-accent/10 rounded-bl-full -z-10 transition-transform group-hover:scale-125"></div>
+                    <div class="w-14 h-14 bg-brand-accent/20 rounded-xl flex items-center justify-center text-brand-accent mb-6 group-hover:scale-110 transition-transform">
+                        <i class="ph ph-book-open-text text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 font-serif">Infancia y Juventud</h3>
+                    <p class="text-amber-400 font-medium mb-2">Un suceso que marcó su vida</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        De origen humilde, trabajó desde niño. El hecho más impactante de su juventud ocurrió en 1912 a sus 17 años, cuando presenció cómo las tropas estadounidenses y conservadoras arrastraban el cadáver del general Benjamín Zeledón. Este suceso despertó su profunda conciencia nacionalista.
+                    </p>
+                </div>
+
+                <!-- Tarjeta Fallecimiento -->
+                <div class="glass-card rounded-2xl p-8 hover:-translate-y-2 transition-transform duration-300 reveal group">
+                    <div class="w-14 h-14 bg-brand-accent/20 rounded-xl flex items-center justify-center text-brand-accent mb-6 group-hover:scale-110 transition-transform">
+                        <i class="ph ph-dove text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 font-serif">Fallecimiento</h3>
+                    <p class="text-amber-400 font-medium mb-2">21 de febrero de 1934</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Fue asesinado a traición en Managua por orden de Anastasio Somoza García, jefe de la Guardia Nacional, tras haber asistido a una cena de paz en el Palacio Presidencial. Su legado se convirtió en símbolo de resistencia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Citas Significativas -->
+    <section id="citas" class="py-20 relative z-10 bg-brand-dark/50 border-y border-white/5">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Cita 1 -->
+                <div class="glass-card p-10 rounded-3xl relative reveal">
+                    <i class="ph-fill ph-quotes text-5xl text-brand-accent/20 absolute top-6 left-6"></i>
+                    <p class="text-xl md:text-2xl font-serif text-white italic relative z-10 leading-relaxed mt-4">
+                        "Mi mayor honra es surgir del seno de los oprimidos, que son el alma y el nervio de la raza."
+                    </p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div class="w-10 h-1 bg-brand-accent rounded-full"></div>
+                        <span class="text-brand-accent font-semibold tracking-wide uppercase text-sm">Augusto C. Sandino</span>
+                    </div>
+                </div>
+                <!-- Cita 2 -->
+                <div class="glass-card p-10 rounded-3xl relative reveal">
+                    <i class="ph-fill ph-quotes text-5xl text-brand-accent/20 absolute top-6 left-6"></i>
+                    <p class="text-xl md:text-2xl font-serif text-white italic relative z-10 leading-relaxed mt-4">
+                        "La soberanía de un pueblo no se discute, sino que se defiende con las armas en la mano."
+                    </p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div class="w-10 h-1 bg-brand-accent rounded-full"></div>
+                        <span class="text-brand-accent font-semibold tracking-wide uppercase text-sm">Augusto C. Sandino</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Segmentación de Video (Multimedia) -->
+    <section id="multimedia" class="py-24 bg-black/40 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between mb-12 reveal">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Archivo Visual</h2>
+                    <p class="text-slate-400">Documentales y registros históricos destacados.</p>
+                </div>
+                <div class="mt-6 md:mt-0 flex items-center gap-2 text-brand-accent bg-brand-accent/10 px-4 py-2 rounded-full text-sm font-medium">
+                    <i class="ph-fill ph-play-circle text-xl"></i> Material Audiovisual
+                </div>
+            </div>
+
+            <!-- Contenedor del Video -->
+            <div class="reveal">
+                <div class="relative w-full aspect-video rounded-3xl overflow-hidden glass-card p-2 md:p-4 shadow-2xl">
+                    <div class="absolute inset-0 bg-brand-accent/5 animate-pulse rounded-3xl -z-10"></div>
+                    <!-- Aquí puedes cambiar el enlace (src) por el video de YouTube o plataforma que desees -->
+                    <iframe 
+                        class="w-full h-full rounded-2xl" 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&controls=1&showinfo=0&rel=0" 
+                        title="Video Histórico" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="mt-6 flex items-start gap-4">
+                    <div class="bg-white/10 p-3 rounded-full shrink-0">
+                        <i class="ph ph-info text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-medium text-lg">Acerca de este segmento</h4>
+                        <p class="text-slate-400 text-sm mt-1">En esta sección puedes reproducir el material visual recopilado sobre las campañas y discursos históricos. *Nota: Reemplaza el enlace en el código HTML por el video deseado.*</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Acciones y Contexto Histórico -->
+    <section id="acciones" class="py-24 relative z-10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Acciones y Momentos Clave</h2>
+                <div class="w-24 h-1 bg-brand-accent mx-auto rounded-full mb-6"></div>
+                <p class="text-slate-400">Las decisiones, reuniones y batallas que definieron su lucha por la soberanía.</p>
+            </div>
+
+            <div class="space-y-0">
+                <!-- Acción 1 -->
+                <div class="relative border-l-2 border-brand-accent/30 pl-8 pb-12 reveal">
+                    <div class="absolute w-6 h-6 bg-brand-dark border-4 border-brand-accent rounded-full -left-[13px] top-0"></div>
+                    <div class="glass-card p-6 md:p-8 rounded-2xl hover:bg-white/5 transition-colors">
+                        <span class="text-brand-accent text-sm font-bold tracking-wider uppercase mb-2 block">1 de julio de 1927</span>
+                        <h3 class="text-2xl font-serif font-bold text-white mb-3">El Manifiesto de San Albino</h3>
+                        <div class="space-y-3 text-slate-300 text-sm md:text-base">
+                            <p><strong class="text-amber-400">Contexto:</strong> Tras el Pacto del Espino Negro, donde las facciones nicaragüenses acordaron deponer las armas bajo supervisión extranjera, Sandino fue el único general que se negó a rendirse.</p>
+                            <p><strong class="text-amber-400">Acción:</strong> Desde las minas de San Albino, emitió su primer manifiesto político declarando oficialmente la guerra a las fuerzas de ocupación y llamando a la resistencia armada nacional.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Acción 2 -->
+                <div class="relative border-l-2 border-brand-accent/30 pl-8 pb-12 reveal">
+                    <div class="absolute w-6 h-6 bg-brand-dark border-4 border-brand-accent rounded-full -left-[13px] top-0"></div>
+                    <div class="glass-card p-6 md:p-8 rounded-2xl hover:bg-white/5 transition-colors">
+                        <span class="text-brand-accent text-sm font-bold tracking-wider uppercase mb-2 block">16 de julio de 1927</span>
+                        <h3 class="text-2xl font-serif font-bold text-white mb-3">La Batalla de Ocotal</h3>
+                        <div class="space-y-3 text-slate-300 text-sm md:text-base">
+                            <p><strong class="text-amber-400">Contexto:</strong> Era necesario demostrar que la resistencia armada no era un pequeño grupo disidente, sino una fuerza con capacidad de combate real.</p>
+                            <p><strong class="text-amber-400">Acción:</strong> Sandino lideró un ataque en la ciudad de Ocotal. Aunque no fue una victoria militar debido al fuerte bombardeo aéreo en respuesta (uno de los primeros en la historia de América), políticamente colocó su lucha en las portadas internacionales.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Acción 3 -->
+                <div class="relative border-l-2 border-brand-accent/30 pl-8 pb-12 reveal">
+                    <div class="absolute w-6 h-6 bg-brand-dark border-4 border-brand-accent rounded-full -left-[13px] top-0"></div>
+                    <div class="glass-card p-6 md:p-8 rounded-2xl hover:bg-white/5 transition-colors">
+                        <span class="text-brand-accent text-sm font-bold tracking-wider uppercase mb-2 block">2 de septiembre de 1927</span>
+                        <h3 class="text-2xl font-serif font-bold text-white mb-3">Fundación del E.D.S.N.</h3>
+                        <div class="space-y-3 text-slate-300 text-sm md:text-base">
+                            <p><strong class="text-amber-400">Contexto:</strong> La resistencia requería una estructura organizativa sólida y disciplina para enfrentar a un ejército superior tecnológica y numéricamente.</p>
+                            <p><strong class="text-amber-400">Acción:</strong> Fundó oficialmente el <em>Ejército Defensor de la Soberanía Nacional de Nicaragua</em>. Implementó tácticas de guerra de guerrillas desde las selvas de Las Segovias, desgastando al ejército de ocupación.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Acción 4 -->
+                <div class="relative border-l-2 border-brand-accent/30 pl-8 pb-12 reveal">
+                    <div class="absolute w-6 h-6 bg-brand-dark border-4 border-brand-accent rounded-full -left-[13px] top-0"></div>
+                    <div class="glass-card p-6 md:p-8 rounded-2xl hover:bg-white/5 transition-colors">
+                        <span class="text-brand-accent text-sm font-bold tracking-wider uppercase mb-2 block">1929 - 1930</span>
+                        <h3 class="text-2xl font-serif font-bold text-white mb-3">Viaje y Gestiones en México</h3>
+                        <div class="space-y-3 text-slate-300 text-sm md:text-base">
+                            <p><strong class="text-amber-400">Contexto:</strong> El EDSN necesitaba armamento, financiamiento y un sólido apoyo político internacional para sostener la guerra prolongada.</p>
+                            <p><strong class="text-amber-400">Reuniones y Acción:</strong> Viajó a México buscando apoyo del gobierno de Emilio Portes Gil. Aunque el apoyo material fue escaso, sostuvo reuniones clave con líderes políticos, intelectuales y redes antiimperialistas latinoamericanas, internacionalizando su causa.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Acción 5 -->
+                <div class="relative border-l-2 border-brand-accent/30 pl-8 pb-0 reveal">
+                    <div class="absolute w-6 h-6 bg-brand-dark border-4 border-brand-accent rounded-full -left-[13px] top-0"></div>
+                    <div class="glass-card p-6 md:p-8 rounded-2xl hover:bg-white/5 transition-colors">
+                        <span class="text-brand-accent text-sm font-bold tracking-wider uppercase mb-2 block">Febrero de 1934</span>
+                        <h3 class="text-2xl font-serif font-bold text-white mb-3">Diálogos de Paz en Managua</h3>
+                        <div class="space-y-3 text-slate-300 text-sm md:text-base">
+                            <p><strong class="text-amber-400">Contexto:</strong> Las tropas extranjeras se habían retirado en 1933, cumpliendo el objetivo principal de Sandino. Juan B. Sacasa había asumido la presidencia.</p>
+                            <p><strong class="text-amber-400">Reunión Clave:</strong> Sandino viajó a Managua para reunirse con el presidente y negociar la desmovilización del EDSN a cambio de tierras y cooperativas para sus hombres. Tras asistir a una cena de paz en La Loma, fue traicionado y asesinado por la Guardia Nacional.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Reflexión Colectiva -->
+    <section id="reflexion" class="py-24 bg-brand-accent/5 relative border-t border-brand-accent/20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl p-8 md:p-12 reveal relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-brand-accent/10 rounded-full blur-3xl -z-10"></div>
+                
+                <div class="flex items-center gap-4 mb-6">
+                    <i class="ph-fill ph-plant text-4xl text-brand-accent"></i>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-white">Vigencia de su Lucha Hoy</h2>
+                </div>
+                
+                <p class="text-lg text-slate-300 leading-relaxed mb-6">
+                    La figura de Augusto C. Sandino trasciende las fronteras de su época. Su lucha no fue solo militar, sino profundamente ideológica y moral. Hoy en día, la <strong>reflexión colectiva</strong> sobre su legado destaca principios que siguen resonando en el mundo contemporáneo:
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+                    <div class="flex gap-4">
+                        <i class="ph ph-shield-check text-3xl text-amber-500 shrink-0 mt-1"></i>
+                        <div>
+                            <h4 class="text-white text-xl font-bold mb-2">Defensa de la Soberanía</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">Su insistencia en que los destinos de una nación deben ser decididos por sus propios ciudadanos, sin injerencia extranjera, sigue siendo un principio central frente a las nuevas formas de hegemonía política y económica global.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <i class="ph ph-users-three text-3xl text-amber-500 shrink-0 mt-1"></i>
+                        <div>
+                            <h4 class="text-white text-xl font-bold mb-2">Dignidad de los Oprimidos</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">Sandino organizó a campesinos y trabajadores ("los de a pie"). Su legado nos recuerda que el verdadero progreso de una sociedad no es real si no incluye la justicia social y la defensa de las clases más vulnerables.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/60 border-t border-white/10 py-10 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <i class="ph ph-scroll text-brand-accent text-3xl"></i>
+            </div>
+            <p class="text-slate-500 text-sm">
+                Diseñado para preservar la historia con tecnología moderna. <br>
+                © 2026 Archivo Histórico Web.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Script para animaciones al hacer scroll -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Animación de aparición al hacer scroll
+            const reveals = document.querySelectorAll(".reveal");
+
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 100;
+
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add("active");
+                    }
+                });
+            };
+
+            window.addEventListener("scroll", revealOnScroll);
+            revealOnScroll(); // Para cargar los elementos que ya están en pantalla
+
+            // Efecto de fondo en el navbar al hacer scroll
+            const navbar = document.getElementById("navbar");
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add("bg-brand-dark/80", "shadow-lg");
+                    navbar.classList.remove("glass-card");
+                } else {
+                    navbar.classList.remove("bg-brand-dark/80", "shadow-lg");
+                    navbar.classList.add("glass-card");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
